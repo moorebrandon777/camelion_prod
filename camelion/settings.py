@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['onrender.com','camelion.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -97,6 +97,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://localhost:8000",
     "https://camelion.onrender.com",
+    "https://*.camelion.onrender.com",
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
