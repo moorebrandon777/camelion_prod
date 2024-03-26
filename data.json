@@ -1,0 +1,337 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$JwciunvQYfP4MqsNl8ey1e$AsA1m82fzT8fh2lPz9AKG+GYyxkZqulklcdZWDTSroU=",
+        "last_login": "2024-03-26T12:55:40.955Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-03-23T12:20:09.936Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bpgbbwva16mynubu3sm6s074rjczajao",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlneOP5R0nMGa9fr4ACypTipEHeHSCmgfTPzXiLitpa49bzEmcVZgDj9boTpkesO-I711mRqdV1mkrsiD9rltXF-Xg7376BgL99aBQ8jUQ4eJ9CasieP4NChYeVQKWWs5ZAGYzNpi6y942Q98wgw2Em8P-ExN80:1rp6L6:YOZb4o7h0IpTr2hfzKerDbLPxtCfntgDmEKuAYd4wow",
+        "expire_date": "2024-04-09T12:55:40.965Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "c9yobywz7bctxg83x1y54rhiksbw3u6a",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlneOP5R0nMGa9fr4ACypTipEHeHSCmgfTPzXiLitpa49bzEmcVZgDj9boTpkesO-I711mRqdV1mkrsiD9rltXF-Xg7376BgL99aBQ8jUQ4eJ9CasieP4NChYeVQKWWs5ZAGYzNpi6y942Q98wgw2Em8P-ExN80:1ro7Ib:RNr82PqhyJW3u6HXYPziZwqPUIsPTa9iXDc3iUG9aBA",
+        "expire_date": "2024-04-06T19:45:01.527Z"
+    }
+},
+{
+    "model": "frontend.myscreenshots",
+    "pk": 1,
+    "fields": {
+        "name": "gmail.com",
+        "screenshot": "screenshots/gmail.com_0EzIZIM.png"
+    }
+},
+{
+    "model": "frontend.myscreenshots",
+    "pk": 3,
+    "fields": {
+        "name": "learnwithhasan.com",
+        "screenshot": "screenshots/learnwithhasan.com.png"
+    }
+},
+{
+    "model": "frontend.myscreenshots",
+    "pk": 5,
+    "fields": {
+        "name": "neilpatel.com",
+        "screenshot": "screenshots/neilpatel.com_qYFA482.png"
+    }
+},
+{
+    "model": "frontend.myscreenshots",
+    "pk": 6,
+    "fields": {
+        "name": "amazon.com",
+        "screenshot": "screenshots/amazon.com.png"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2024-03-23T13:46:08.807Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "2",
+        "object_repr": "learnwithhasan.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2024-03-23T14:38:35.018Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "4",
+        "object_repr": "screenshots/mlearnwithhasan.com.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2024-03-23T14:38:39.881Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "3",
+        "object_repr": "screenshots/learnwithhasan.com.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2024-03-23T14:38:44.641Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "1",
+        "object_repr": "",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2024-03-23T15:07:18.257Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "6",
+        "object_repr": "screenshots/ylearnwithhasan.com.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2024-03-23T15:07:25.587Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "5",
+        "object_repr": "",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2024-03-23T19:18:12.545Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "8",
+        "object_repr": "d.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2024-03-23T19:18:16.339Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "7",
+        "object_repr": "d.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2024-03-23T19:21:35.301Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "9",
+        "object_repr": "screenshots/learnwithhasan.com.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2024-03-23T19:27:25.540Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "10",
+        "object_repr": "screenshots/learnwithhasan.com_LezAZQV.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2024-03-23T19:34:28.200Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "13",
+        "object_repr": "screenshots/gmail.com_n9qDodZ.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2024-03-23T19:34:28.208Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "12",
+        "object_repr": "screenshots/gmail.com_X5yfi2R.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2024-03-23T19:34:28.217Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "11",
+        "object_repr": "screenshots/gmail.com.png",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2024-03-23T19:57:52.774Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "2",
+        "object_repr": "learnwithhasan.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2024-03-26T12:55:50.331Z",
+        "user": [
+            "admin"
+        ],
+        "content_type": [
+            "frontend",
+            "myscreenshots"
+        ],
+        "object_id": "4",
+        "object_repr": "neilpatel.com",
+        "action_flag": 3,
+        "change_message": ""
+    }
+}
+]
