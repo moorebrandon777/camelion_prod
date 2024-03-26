@@ -62,13 +62,15 @@ def fetch_background_image(request):
             
             finally:
                 doman = request.build_absolute_uri('/')
+                domain = (doman[0:len(doman)-1])
                 try:
-                    response = f'{doman}{product.screenshot.url}'
+                    response = f'{domain}{product.screenshot.url}'
                 except:
-                    response = f'{doman}gmail.com'
+                    response = f'{domain}/media/screenshots/google.com.png'
         else:
             doman = request.build_absolute_uri('/')
-            response = f'{doman}gmail.com'
+            domain = (doman[0:len(doman)-1])
+            response = f'{domain}/media/screenshots/google.com.png'
     return JsonResponse({'bgimg': response},safe=False)
 
 
