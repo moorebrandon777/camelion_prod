@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -96,6 +96,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://127.0.0.1:8000",
     "http://localhost:8000"
+    "https://camelion.onrender.com/"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
@@ -152,4 +153,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CSRF_TRUSTED_ORIGINS = ['http://*.127.0.0.1:5500','http://*.127.0.0.1:5500/frontend/my_bg', 'http://127.0.0.1:8000', 'http://*.127.0.0.1:5500/frontend/detail']
+CSRF_TRUSTED_ORIGINS = [
+    'http://*.127.0.0.1:5500',
+    'http://*.127.0.0.1:5500/frontend/my_bg',
+    'http://127.0.0.1:8000', 
+    'http://*.127.0.0.1:5500/frontend/detail'
+    'https://camelion.onrender.com/',
+    'https://camelion.onrender.com/frontend/my_bg'
+    'https://camelion.onrender.com/frontend/detail'
+    ]
