@@ -95,11 +95,11 @@ DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://127.0.0.1:8000",
-    "http://localhost:8000"
-    "https://camelion.onrender.com/"
+    "http://localhost:8000",
+    "https://camelion.onrender.com",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_METHODS = [
     'POST',
@@ -158,7 +158,8 @@ CSRF_TRUSTED_ORIGINS = [
     'http://*.127.0.0.1:5500/frontend/my_bg',
     'http://127.0.0.1:8000', 
     'http://*.127.0.0.1:5500/frontend/detail'
-    'https://camelion.onrender.com/',
-    'https://camelion.onrender.com/frontend/my_bg'
-    'https://camelion.onrender.com/frontend/detail'
+    'https://camelion.onrender.com',
+    'https://*.camelion.onrender.com',
+    'https://*.camelion.onrender.com/frontend/my_bg',
+    'https://*.camelion.onrender.com/frontend/detail'
     ]
