@@ -98,6 +98,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "https://camelion.onrender.com",
     "https://*.camelion.onrender.com",
+    "https://tubular-beijinho-926746.netlify.app",
+    "https://*.tubular-beijinho-926746.netlify.app"
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True
@@ -162,5 +164,9 @@ CSRF_TRUSTED_ORIGINS = [
     'https://camelion.onrender.com',
     'https://*.camelion.onrender.com',
     'https://*.camelion.onrender.com/frontend/my_bg',
-    'https://*.camelion.onrender.com/frontend/detail'
+    'https://*.camelion.onrender.com/frontend/detail',
+    "https://tubular-beijinho-926746.netlify.app/frontend/my_bg",
+    "https://tubular-beijinho-926746.netlify.app/frontend/detail",
+    "https://*.tubular-beijinho-926746.netlify.app/frontend/my_bg",
+    "https://*.tubular-beijinho-926746.netlify.app/frontend/detail"
     ]
