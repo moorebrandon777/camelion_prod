@@ -17,6 +17,9 @@ def get_my_screenshot(url):
     chrome_options = Options()
     chrome_options.add_argument("start-maximized")
     chrome_options.add_argument("--headless")
+
+    chrome_options.add_argument('--disable-dev-shm-usage')
+
     chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
     chrome_options.add_experimental_option('useAutomationExtension', False)
 
@@ -33,6 +36,7 @@ def get_my_screenshot(url):
         )
 
     # getting the url
+    
     driver.get(email_name)
 
     # determine the size of screen
@@ -42,9 +46,12 @@ def get_my_screenshot(url):
     static_dir = os.path.join(settings.BASE_DIR, "screenshots", "frontend")
     os.makedirs(static_dir, exist_ok=True)
     screenshot_path = os.path.join(static_dir, f'{f_email}.png')
-
-    # taking the screenshot
-    driver.save_screenshot(screenshot_path)
-    driver.quit()
+    try:
+        # taking the screenshot
+        driver.save_screenshot(screenshot_path)
+    except:
+        print('failed')
+    finally:
+        driver.quit()
 
     return screenshot_path
