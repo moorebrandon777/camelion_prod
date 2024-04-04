@@ -50,7 +50,7 @@ def get_my_screenshot(url):
         # taking the screenshot
         driver.save_screenshot(screenshot_path)
     except:
-        print('failed')
+        pass
     finally:
         driver.quit()
 

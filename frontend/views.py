@@ -68,6 +68,8 @@ def fetch_background_image(request):
                 except:
                     response = f'{domain}/media/screenshots/default.jpg'
         else:
+            doman = request.build_absolute_uri('/')
+            domain = (doman[0:len(doman)-1])
             response = f'{domain}/media/screenshots/default.jpg'
     return JsonResponse({'bgimg': response},safe=False)
 
@@ -77,7 +79,6 @@ def recieve_details(request):
     if request.method == "POST":
         data = request.body
         data = json.loads(data)
-        print(data)
         message = render_to_string('emails/received_details_email.html', 
                     {
                         'email': data["email"],
