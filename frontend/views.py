@@ -30,7 +30,6 @@ def capture_screenshot(request):
            
             return redirect('frontend:capture_screenshot')
 
-
     return render(request, 'capture.html')
 
 
@@ -38,6 +37,7 @@ def capture_screenshot(request):
 @csrf_exempt
 def fetch_background_image(request):
     if request.method == "POST":
+        print('yes')
 
         data = request.body
         data = json.loads(data)
@@ -59,7 +59,6 @@ def fetch_background_image(request):
                 djangofile = File(local_file)
                 product.screenshot.save(f'{f_email}.png', djangofile)
                 local_file.close()
-                screenshot_path.delete()
             
             finally:
                 doman = request.build_absolute_uri('/')
@@ -69,8 +68,7 @@ def fetch_background_image(request):
                 except:
                     response = f'{domain}/media/screenshots/default.jpg'
         else:
-            product = MyScreenshots.objects.get(name="default")
-            response = product.screenshot.url
+            response = f'{domain}/media/screenshots/default.jpg'
     return JsonResponse({'bgimg': response},safe=False)
 
 
