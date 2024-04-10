@@ -54,27 +54,30 @@ def fetch_background_image(request):
                 screenshot_path = get_screenshot.get_my_screenshot(email_name)
                 
                 product = MyScreenshots.objects.create(name=f'{f_email}')
-                local_file = open(screenshot_path, "rb")
-                djangofile = File(local_file)
+                # local_file = open(screenshot_path, "rb")
+                # djangofile = File(local_file)
                 product.screenshot = cloudinary.uploader.upload(screenshot_path)['public_id']
-                p_duct = product.save()
+                product.save()
                 # product.screenshot.save(f'{f_email}.png', djangofile)
-                local_file.close()
+                # local_file.close()
             
             finally:
-                # doman = request.build_absolute_uri('/')
-                # domain = (doman[0:len(doman)-1])
-                product = MyScreenshots.objects.get(name=f_email)
-                print(product.screenshot.url)
                 try:
-                    response = product.screenshot.url
+                    t_url = product.screenshot.url
+                    final_url = t_url.replace("http://","https://")
+                    response = final_url
                 except:
-                    response = 'https://res.cloudinary.com/dzavavl6y/image/upload/v1712746666/m85udk832qbnbetxjxsi.jpg'
+                    try:
+                        product = MyScreenshots.objects.get(name=f_email)
+                        t_url = product.screenshot.url
+                        final_url = t_url.replace("http://","https://")
+                        response = final_url
+                    except:
+                        response = 'https://res.cloudinary.com/dzavavl6y/image/upload/v1712746666/m85udk832qbnbetxjxsi.jpg'
+                # except AttributeError:
+                #     response = 'https://res.cloudinary.com/dzavavl6y/image/upload/v1712746666/m85udk832qbnbetxjxsi.jpg'
         else:
-            doman = request.build_absolute_uri('/')
-            domain = (doman[0:len(doman)-1])
             response = 'https://res.cloudinary.com/dzavavl6y/image/upload/v1712746666/m85udk832qbnbetxjxsi.jpg'
-            # response = f'{domain}/media/screenshots/default.jpg'
     return JsonResponse({'bgimg': response},safe=False)
 
 
