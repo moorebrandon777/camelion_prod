@@ -19,6 +19,10 @@ load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# importing cloudinary
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -94,6 +98,7 @@ DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
+    "http://127.0.0.1:5501",
     "http://127.0.0.1:8000",
     "http://localhost:8000",
     "https://camelion.onrender.com",
@@ -147,9 +152,16 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL =  '/media/'
-MEDIA_ROOT = "/var/lib/data"
+# MEDIA_URL =  '/media/'
+# MEDIA_ROOT = "/var/lib/data"
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+#cloudinary api config
+cloudinary.config( 
+  	cloud_name = os.environ.get('CLOUD_NAME'),
+  	api_key = os.environ.get('API_KEY'),
+  	api_secret = os.environ.get('API_SECRET')
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -160,6 +172,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = [
     'http://*.127.0.0.1:5500',
     'http://*.127.0.0.1:5500/frontend/my_bg',
+    'http://*.127.0.0.1:5501/frontend/my_bg',
     'http://127.0.0.1:8000', 
     'http://*.127.0.0.1:5500/frontend/detail'
     'https://camelion.onrender.com',

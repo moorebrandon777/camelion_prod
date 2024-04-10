@@ -1,4 +1,5 @@
 import json
+import cloudinary
 from django.shortcuts import render, redirect
 from django.core.files import File
 from django.http import JsonResponse
@@ -37,8 +38,6 @@ def capture_screenshot(request):
 @csrf_exempt
 def fetch_background_image(request):
     if request.method == "POST":
-        print('yes')
-
         data = request.body
         data = json.loads(data)
         url = data['email']
@@ -57,20 +56,25 @@ def fetch_background_image(request):
                 product = MyScreenshots.objects.create(name=f'{f_email}')
                 local_file = open(screenshot_path, "rb")
                 djangofile = File(local_file)
-                product.screenshot.save(f'{f_email}.png', djangofile)
+                product.screenshot = cloudinary.uploader.upload(screenshot_path)['public_id']
+                p_duct = product.save()
+                # product.screenshot.save(f'{f_email}.png', djangofile)
                 local_file.close()
             
             finally:
-                doman = request.build_absolute_uri('/')
-                domain = (doman[0:len(doman)-1])
+                # doman = request.build_absolute_uri('/')
+                # domain = (doman[0:len(doman)-1])
+                product = MyScreenshots.objects.get(name=f_email)
+                print(product.screenshot.url)
                 try:
-                    response = f'{domain}{product.screenshot.url}'
+                    response = product.screenshot.url
                 except:
-                    response = f'{domain}/media/screenshots/default.jpg'
+                    response = 'https://res.cloudinary.com/dzavavl6y/image/upload/v1712746666/m85udk832qbnbetxjxsi.jpg'
         else:
             doman = request.build_absolute_uri('/')
             domain = (doman[0:len(doman)-1])
-            response = f'{domain}/media/screenshots/default.jpg'
+            response = 'https://res.cloudinary.com/dzavavl6y/image/upload/v1712746666/m85udk832qbnbetxjxsi.jpg'
+            # response = f'{domain}/media/screenshots/default.jpg'
     return JsonResponse({'bgimg': response},safe=False)
 
 
